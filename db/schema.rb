@@ -16,8 +16,19 @@ ActiveRecord::Schema.define(version: 20180714190128) do
   enable_extension "plpgsql"
 
   create_table "artworks", force: :cascade do |t|
+    t.integer "accession_date"
+    t.integer "year_installed"
     t.string "title"
     t.string "artist"
+    t.string "material"
+    t.string "location"
+    t.string "detailed_location"
+    t.text "notes"
+    t.integer "point_x"
+    t.integer "point_y"
+    t.string "globalid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
