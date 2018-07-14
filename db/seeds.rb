@@ -14,6 +14,7 @@ CSV.foreach('./data/public_art.csv', headers: true, header_converters: :symbol) 
                 title: art[:title],
                 artist: art[:artist],
                 material: art[:material],
+                location: art[:location],
                 detailed_location: art[:detailed_location],
                 notes: art[:notes],
                 point_x: art[:point_x],
