@@ -1,4 +1,4 @@
-ACCESSION_DATE,YEAR_INSTALLED,TITLE,ARTIST,MATERIAL,LOCATION,DETAILED_LOCATION,NOTES,POINT_X,POINT_Y,GLOBALID
+accession_date,year_installed,title,artist,material,location,detailed_location,notes,point_x,point_y,globalid
 1997.3.2,1997,3 Wild Spaces  two of three,Andrew Dufford,Etched Granite,Goldsmith Gulch 3 locations,On Pathway,,3167752.69678,1665535.099,{00000000-0000-0000-0000-000000000000}
 1997.3.3,1997,3 Wild Spaces  three of three,Andrew Dufford,Etched Granite,Goldsmith Gulch 3 locations,On Pathway,,3167791.01111,1666948.48219,{00000000-0000-0000-0000-000000000000}
 2006.28.1,2006,Forgotten Landscapes,Shannon Kelly,Video Installation,Colorado Convention Center Hotel Hyatt,Exterior facing 15th St,,3142496.62341,1696208.8973,{00000000-0000-0000-0000-000000000000}
