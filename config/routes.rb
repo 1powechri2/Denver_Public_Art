@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/locations', to: 'locations#index'
+
+  get '/location', to: 'location#show_art'
   resources :artworks
   resources :users, only: [:new, :create, :show]
 end
