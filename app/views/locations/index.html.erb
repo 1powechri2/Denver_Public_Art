@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<body>
+<% @locations.each do |location| %>
+<p><%= link_to location, "/location?location=#{location}" %></p>
+<% end %>
+</body>
