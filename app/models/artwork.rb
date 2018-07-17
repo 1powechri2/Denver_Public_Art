@@ -6,6 +6,6 @@ class Artwork < ApplicationRecord
   end
 
   def self.uniq_locations
-    pluck(:location).uniq
+    order(:location).pluck(:location).uniq
   end
 end
