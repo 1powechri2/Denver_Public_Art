@@ -2,6 +2,7 @@
 <html>
   <body class="index_body">
     <header class="index_header"><h1>DENVER'S PUBLIC ART</h1></header><br>
+    <h2><%= link_to 'Artwork by Location', '/locations' %></h2>
       <section class="content">
         <% @artworks.each do |artwork| %>
           <p>Title: <%= artwork.title %></p>
