@@ -1,11 +1,15 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <% @artworks.each do |artwork| %>
-    <p>Title: <%= artwork.title %></p>
-    <p>Artist: <%= artwork.artist %></p>
-    <%= link_to "Google Map for #{artwork.location}",
-    "http://www.google.com/maps?q=#{artwork.location}",
-    target: :_blank %>
-     <% end %>
+  <body class="index_body">
+    <header class="index_header"><h1>DENVER'S PUBLIC ART</h1></header><br>
+      <section class="content">
+        <% @artworks.each do |artwork| %>
+          <p>Title: <%= artwork.title %></p>
+          <p>Artist: <%= artwork.artist %></p>
+          <%= link_to "Google Map for #{artwork.location}",
+          "http://www.google.com/maps?q=#{artwork.location}",
+          target: :_blank %>
+        <% end %>
+    </section>
   </body>
 </html>
