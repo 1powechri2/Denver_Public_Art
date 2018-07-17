@@ -19,7 +19,7 @@ describe Artwork do
       art_two = Artwork.create(title: "13 Dead Birds", artist: "Kelly", location: "Hell")
       art_three = Artwork.create(title: "13 Dead Birds", artist: "Kelly", location: "Dad's House")
 
-      expect(Artwork.uniq_locations).to eq(["Hell", "Dad's House"])
+      expect(Artwork.uniq_locations).to eq(["Dad's House", "Hell"])
     end
   end
 end
