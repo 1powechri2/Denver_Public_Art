@@ -1,0 +1,20 @@
+.index_header {
+  height: 15px;
+  margin: 0px auto;
+  position: fixed;
+}
+
+.index_body {
+  background-image: url("mustangagain.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+.content {
+  margin: 50px;
+}

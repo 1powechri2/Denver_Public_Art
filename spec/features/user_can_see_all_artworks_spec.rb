@@ -10,10 +10,10 @@ describe 'A user can see all artworks on index page' do
 
       expect(page).to have_content("Title: #{art_one.title}")
       expect(page).to have_content("Artist: #{art_one.artist}")
-      expect(page).to have_content("Location: #{art_one.location}")
+      expect(page).to have_content("#{art_one.location}")
       expect(page).to have_content("Title: #{art_two.title}")
       expect(page).to have_content("Artist: #{art_two.artist}")
-      expect(page).to have_content("Location: #{art_two.location}")
+      expect(page).to have_content("#{art_two.location}")
     end
   end
 end
