@@ -5,6 +5,10 @@ describe Artwork do
     it {should validate_presence_of(:title)}
     it {should validate_presence_of(:artist)}
   end
+  describe 'relationships' do
+    it {should have_many(:favorites)}
+    it {should have_many(:users).through(:favorites)}
+  end
   describe 'class methods' do
     it 'can find all artworks by location' do
       art_one = Artwork.create(title: "God's Hand", artist: "Melvin", location: "Hell")

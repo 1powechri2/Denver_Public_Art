@@ -6,6 +6,10 @@ describe User do
     it {should validate_uniqueness_of(:username)}
     it {should validate_presence_of(:password)}
   end
+  describe 'relationships' do
+    it {should have_many(:favorites)}
+    it {should have_many(:artworks).through(:favorites)}
+  end
   describe 'roles' do
     it 'can be created as an admin' do
       user = User.create(username: 'Boo', password: '324wtqe', role: 1)
