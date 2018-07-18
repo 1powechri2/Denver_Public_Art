@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   resources :artworks, only: [:index]
 
   resources :users, only: [:new, :create, :show] do
-    resources :user_artworks, only: [:index]
-    resources :favorites
+    get '/locales', to: 'user_locations#index'
+    get '/locale', to: 'user_location#show_art'
+    resources :user_artworks, only: [:index, :show] do
+      resources :favorites, only: [:new, :create, :show]
+    end
   end
 
   namespace :admin do

@@ -5,6 +5,7 @@
     <% @artworks.each do |artwork| %>
       <p><%= artwork.title %><br>
       <%= artwork.artist %></p>
+      <%= link_to 'Add to Favorites', new_user_user_artwork_favorite_path(current_user, artwork) %>
     <% end %>
   </body>
 </html>

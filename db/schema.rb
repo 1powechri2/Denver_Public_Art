@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180718004331) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.string "rating"
+    t.integer "rating"
     t.string "comment"
     t.bigint "user_id"
     t.bigint "artwork_id"
