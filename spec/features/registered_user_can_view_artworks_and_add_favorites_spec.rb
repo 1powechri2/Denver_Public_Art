@@ -47,6 +47,7 @@ describe 'Registered user can view artworks and add them to favorites' do
       click_on "Create Favorite"
 
       expect(current_path).to eq(user_path(user))
+      expect(page).to have_content("God's Hand")
       expect(page).to have_content("Rating: 4")
       expect(page).to have_content("Comment: this is awesome")
     end

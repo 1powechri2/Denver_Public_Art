@@ -3,7 +3,14 @@
 <% if @favorites.empty? %>
       <p>You have no favorites, choose art you like and add it to your favorites</p>
 <% else %>
-  <%= @favorites.each do |favorite| %>
+  <% @favorites.each do |favorite| %>
+    <% @artworks.each do |artwork| %>
+      <% if artwork.id == favorite.artwork.id %>
+      <% art = artwork %>
+      <% end %>
+      <p><%= art.title %></p>
+      <p><%= art.artist %></p>
+    <% end %>
   <p>Rating: <%= favorite.rating %></p>
   <p>Comment: <%= favorite.comment %></p>
   <% end %>
