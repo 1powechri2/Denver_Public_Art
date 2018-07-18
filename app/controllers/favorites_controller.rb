@@ -7,8 +7,8 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new(favorite_params)
-    @artwork  = Artwork.find(params[:format])
       if @favorite.save
+        @artwork  = Artwork.find(params[:format])
         flash[:success] = "You Have Favorited #{@artwork.title}"
         redirect_to user_path(current_user)
       else

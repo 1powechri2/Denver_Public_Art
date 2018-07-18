@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get '/locales', to: 'user_locations#index'
     get '/locale', to: 'user_location#show_art'
     resources :user_artworks, only: [:index, :show] do
-      resources :favorites, only: [:new, :create, :show]
+      resources :favorites
     end
   end
 

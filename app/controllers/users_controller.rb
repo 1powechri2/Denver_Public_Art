@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @favorites = current_user.favorites
-    @artworks  = User.find(current_user.id).artworks
+    @favorites = User.find(current_user.id).favorites
   end
 
   private
