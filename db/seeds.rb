@@ -8,6 +8,8 @@
 require './app/models/artwork.rb'
 require 'csv'
 
+User.create(username: 'Chris', password: 'sfyack1', role: 1)
+
 CSV.foreach('./data/public_art.csv', headers: true, header_converters: :symbol) do |art|
   Artwork.create(accession_date: art[:accession_date],
                 year_installed: art[:year_installed],
