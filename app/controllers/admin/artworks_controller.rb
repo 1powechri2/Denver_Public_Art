@@ -21,6 +21,11 @@ class Admin::ArtworksController < Admin::BaseController
     redirect_to admin_artworks_path
   end
 
+  def destroy
+    Artwork.destroy(params[:id])
+    redirect_to admin_artworks_path
+  end
+
   private
 
   def artwork_params

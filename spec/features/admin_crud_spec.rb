@@ -44,5 +44,20 @@ describe 'User visits artythings index page' do
       expect(current_path).to eq(admin_artworks_path)
       expect(page).to have_content('Hell Yes')
     end
+    it 'allows admin to see all categories and delete one' do
+      art = Artwork.create(title: "God's Hand", artist: "Melvin", location: "hell")
+      admin = User.create(username: "Beau", password: "boohoo", role: 1)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+      visit admin_artworks_path
+
+      expect(page).to have_content("Admin Artythings")
+
+      click_on 'Delete Artything'
+
+      expect(current_path).to eq(admin_artworks_path)
+      expect(Artwork.all).to eq([])
+    end
   end
 end
