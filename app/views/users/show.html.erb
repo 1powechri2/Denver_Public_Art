@@ -8,7 +8,7 @@
     <p><%= favorite.artwork.artist %></p>
     <p>Rating: <%= favorite.rating %></p>
     <p>Comment: <%= favorite.comment %></p>
-    <%= link_to 'Edit Favorite', edit_user_user_artwork_favorite_path(current_user, favorite.artwork, favorite) %><br>
+    <%= link_to 'Edit Favorite', edit_user_artwork_favorite_path(current_user, favorite.artwork, favorite) %><br>
   <% end %>
 <% end %>
 
