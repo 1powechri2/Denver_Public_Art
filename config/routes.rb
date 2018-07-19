@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categories, only: [:index]
+    resources :artworks
   end
 end
