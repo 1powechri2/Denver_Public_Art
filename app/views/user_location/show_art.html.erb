@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <%= link_to "Back To My Page", user_path(current_user) %>
     <h1>Artworks for <%= @location %></h1>
     <% @artworks.each do |artwork| %>
       <p><%= artwork.title %><br>

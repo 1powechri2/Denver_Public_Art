@@ -3,7 +3,8 @@
   <body class="index_body">
     <header class="index_header"><h1>DENVER'S PUBLIC ART</h1></header><br>
       <section>
-        <%= link_to "Artwork by Location", '/locations' %>
+        <%= link_to "Back To My Page", user_path(current_user) %>
+        <%= link_to "Artwork by Location", user_locales_path(current_user) %>
       </section>
       <section class="content">
         <% @artworks.each do |artwork| %>
