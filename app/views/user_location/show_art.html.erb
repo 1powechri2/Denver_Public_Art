@@ -2,11 +2,11 @@
 <html>
   <body>
     <%= link_to "Back To My Page", user_path(current_user) %>
-    <h1>Artworks for <%= @location %></h1>
+    <h1>Artworks for <%= @location %></h1><br>
     <% @artworks.each do |artwork| %>
-      <p><%= artwork.title %><br>
-      <%= artwork.artist %></p>
-      <%= link_to 'Add to Favorites', new_user_artwork_favorite_path(current_user, artwork) %>
+      <p>Title: <%= artwork.title %></p>
+      <p>Artist: <%= artwork.artist %></p>
+      <%= link_to 'Add to Favorites', new_user_artwork_favorite_path(current_user, artwork) %><br>
     <% end %>
   </body>
 </html>
