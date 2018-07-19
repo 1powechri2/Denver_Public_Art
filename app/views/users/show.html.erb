@@ -9,6 +9,8 @@
     <p>Rating: <%= favorite.rating %></p>
     <p>Comment: <%= favorite.comment %></p>
     <%= link_to 'Edit Favorite', edit_user_artwork_favorite_path(current_user, favorite.artwork, favorite) %><br>
+    <%= link_to 'Delete Favorite', user_artwork_favorite_path(current_user, favorite.artwork, favorite), method: :delete,
+    data: {confirm: "Really delete the Favorite?"} %><br>
   <% end %>
 <% end %>
 

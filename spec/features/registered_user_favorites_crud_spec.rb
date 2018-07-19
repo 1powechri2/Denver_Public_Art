@@ -73,5 +73,19 @@ describe 'Registered user can view artworks and add them to favorites' do
       expect(page).to have_content("Rating: 2")
       expect(page).to have_content("Comment: not soo much")
     end
+    it 'can update a favorite from the user show page' do
+      art = Artwork.create(title: "God's Hand", artist: "Melvin", location: "hell")
+      user = User.create(username: 'Muse', password: 'TooHot')
+      favorite = Favorite.create(rating: 3, comment: 'hghg', artwork_id: art.id, user_id: user.id)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit user_path(user)
+
+      click_on 'Delete Favorite'
+
+      expect(current_path).to eq(user_path(user))
+      expect(page).to have_content('You have no favorites, choose art you like and add it to your favorites') 
+    end
   end
 end
