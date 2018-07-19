@@ -3,9 +3,14 @@
 <% if @favorites.empty? %>
       <p>You have no favorites, choose art you like and add it to your favorites</p>
 <% else %>
-  <%= @favorites.each do |favorite| %>
-  <p>Rating: <%= favorite.rating %></p>
-  <p>Comment: <%= favorite.comment %></p>
+  <% @favorites.each do |favorite| %>
+    <p><%= favorite.artwork.title %></p>
+    <p><%= favorite.artwork.artist %></p>
+    <p>Rating: <%= favorite.rating %></p>
+    <p>Comment: <%= favorite.comment %></p>
+    <%= link_to 'Edit Favorite', edit_user_artwork_favorite_path(current_user, favorite.artwork, favorite) %><br>
+    <%= link_to 'Delete Favorite', user_artwork_favorite_path(current_user, favorite.artwork, favorite), method: :delete,
+    data: {confirm: "Really delete the Favorite?"} %><br>
   <% end %>
 <% end %>
 

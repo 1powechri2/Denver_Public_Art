@@ -1,25 +1,39 @@
 class FavoritesController < ApplicationController
   def new
-    @favorite = Favorite.new
-    @user     = User.find(params[:user_id])
-    @artwork  = Artwork.find(params[:user_artwork_id])
+    @favorite  = Favorite.new
+    @user      = User.find(params[:user_id])
+    @artwork   = Artwork.find(params[:artwork_id])
   end
 
   def create
     @favorite = Favorite.new(favorite_params)
-    @artwork  = Artwork.find(params[:format])
-      if @favorite.save
-        flash[:success] = "You Have Favorited #{@artwork.title}"
-        redirect_to user_path(current_user)
-      else
-        render :new
-      end
-    end
+    @favorite.save
+      @artwork  = Artwork.find(params[:artwork_id])
+      flash[:success] = "You Have Favorited #{@artwork.title}"
+      redirect_to user_path(current_user)
+  end
+
+  def edit
+    @favorite = Favorite.find(params[:id])
+    @user     = User.find(params[:user_id])
+    @artwork  = Artwork.find(params[:artwork_id])
+  end
+
+  def update
+    favorite = Favorite.find(params[:id])
+    favorite.update(favorite_params)
+    redirect_to user_path(current_user)
+  end
+
+  def destroy
+    Favorite.destroy(params[:id])
+    redirect_to user_path(current_user)
+  end
 
   private
 
   def favorite_params
     {rating: params[:rating], comment: params[:favorite][:comment],
-    user_id: params[:user_id], artwork_id: params[:format]}
+    user_id: params[:user_id], artwork_id: params[:artwork_id]}
   end
 end
