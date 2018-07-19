@@ -1,4 +1,6 @@
 <h1>Welcome, <%= current_user.username %>!</h1>
+<p><%= link_to "Checkout the Index of Local Public Art", user_artworks_path(current_user) %></P>
+<p><%= link_to "Checkout the Index of Locations for Public Art", user_locales_path(current_user) %></P>
 
 <% if @favorites.empty? %>
       <p>You have no favorites, choose art you like and add it to your favorites</p>

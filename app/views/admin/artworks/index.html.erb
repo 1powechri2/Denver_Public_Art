@@ -1,0 +1,7 @@
+<h1>Admin Artythings</h1>
+<% @arts.each do |art| %>
+<p><%= art.title %></p>
+<p><%= link_to 'Create New Artything', new_admin_artwork_path %></p>
+<p><%= link_to 'Update Artything', edit_admin_artwork_path(art) %></p>
+<p><%= link_to 'Delete Artything', admin_artwork_path(art), method: :delete %></p>
+<% end %>
