@@ -12,6 +12,15 @@ class Admin::ArtworksController < Admin::BaseController
     redirect_to admin_artworks_path
   end
 
+  def edit
+    @art = Artwork.find(params[:id])
+  end
+
+  def update
+    Artwork.update(artwork_params)
+    redirect_to admin_artworks_path
+  end
+
   private
 
   def artwork_params
