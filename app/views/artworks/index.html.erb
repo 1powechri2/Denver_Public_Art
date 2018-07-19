@@ -8,12 +8,17 @@
       </section>
       <section class="content">
         <% @artworks.each do |artwork| %>
-          <p>Title: <%= artwork.title %></p>
-          <p>Artist: <%= artwork.artist %></p>
-          <%= link_to "Google Map for #{artwork.location}",
+        <ul>
+          <li>Title: <%= artwork.title %></li>
+          <li>Artist: <%= artwork.artist %></li>
+          <li><%= link_to "Wikipedia for #{artwork.artist}",
+          "http://www.wikipedia.com/wiki/#{artwork.artist}",
+          target: :_blank %></li>
+          <li><%= link_to "Google Map for #{artwork.location}",
           "http://www.google.com/maps?q=#{artwork.location}",
-          target: :_blank %>
+          target: :_blank %></li>
         <% end %>
+      </ul>
     </section>
   </body>
 </html>

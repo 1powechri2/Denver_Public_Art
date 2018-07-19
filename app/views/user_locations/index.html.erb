@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <body>
 <%= link_to "Back To My Page", user_path(current_user) %>
-<h1>Choose a Location</h1>
+<h1>Choose a Location to view The Art There.</h1>
 <% @locations.each do |location| %>
 <p><%= link_to location, user_locale_path(current_user, {:location => location}) %></p>
+<p><%= link_to "Click here to open a map for #{location} in another tab.",
+"http://www.google.com/maps?q=#{location}",
+target: :_blank %></p>
 <% end %>
 </body>
